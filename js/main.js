@@ -139,8 +139,9 @@ if (contactForm) {
       contactForm.reset();
       openWhatsAppModal();
     } catch (error) {
-      submitButton.textContent = 'Erro ao enviar. Tente novamente.';
+      submitButton.textContent = 'Erro no envio. Tentando via formulário normal...';
       submitButton.disabled = false;
+      contactForm.submit();
     } finally {
       setTimeout(() => {
         if (submitButton.textContent !== 'Enviado!') {
